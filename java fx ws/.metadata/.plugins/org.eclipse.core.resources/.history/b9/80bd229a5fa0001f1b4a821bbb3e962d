@@ -1,0 +1,96 @@
+import java.awt.EventQueue;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class MainFrame extends JFrame {
+
+    private JPanel contentPane;
+    private JTextField textField;  // TextField for input
+    private JLabel responseLabel;  // Label to show response
+
+    /**
+     * Launch the application.
+     */
+    public static void main(String[] args) {
+        EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                    MainFrame frame = new MainFrame();
+                    frame.setVisible(true);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    /**
+     * Create the frame.
+     */
+    public MainFrame() {
+        // Set basic properties of the frame
+        setTitle("Vehicle Transfer System");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setBounds(100, 100, 450, 300);
+        
+        // Set a custom layout for content panel
+        contentPane = new JPanel();
+        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+        contentPane.setLayout(new BorderLayout());  // Using BorderLayout
+
+        setContentPane(contentPane);
+
+        // Add components in BorderLayout
+        // North: Title label
+        JLabel titleLabel = new JLabel("Enter Vehicle Information");
+        titleLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        contentPane.add(titleLabel, BorderLayout.NORTH);
+
+        // Center: Panel for user input
+        JPanel inputPanel = new JPanel();
+        inputPanel.setLayout(new FlowLayout());
+        contentPane.add(inputPanel, BorderLayout.CENTER);
+
+        // VIN label and TextField
+        JLabel vinLabel = new JLabel("Enter VIN: ");
+        inputPanel.add(vinLabel);
+        
+        textField = new JTextField(20);  // A text field with width of 20 columns
+        inputPanel.add(textField);
+
+        // Submit Button
+        JButton submitButton = new JButton("Submit");
+        inputPanel.add(submitButton);
+
+        // South: Response label
+        responseLabel = new JLabel("Response will appear here.");
+        responseLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        contentPane.add(responseLabel, BorderLayout.SOUTH);
+
+        // Action Listener for Submit Button
+        submitButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                String vin = textField.getText();
+                // Simulate some action (e.g., checking VIN validity)
+                if (vin.isEmpty()) {
+                    responseLabel.setText("Error: VIN cannot be empty.");
+                    responseLabel.setForeground(Color.RED);
+                } else {
+                    responseLabel.setText("Vehicle with VIN " + vin + " has been transferred.");
+                    responseLabel.setForeground(Color.GREEN);
+                }
+            }
+        });
+    }
+}

@@ -1,0 +1,39 @@
+package junitTest;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class TransferTestCase1 {
+
+	@Test
+	public void testTransferStringStringStringStringBoolean() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetVin() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetCurrentOwnerName() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetNewOwnerName() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetQidNewOwner() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testHasUnpaidBills() {
+		fail("Not yet implemented");
+	}
+
+}

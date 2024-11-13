@@ -1,0 +1,2 @@
+eclipse.preferences.version=1
+org.eclipse.core.variables.valueVariables=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<valueVariables>\n    <valueVariable description\="" name\="JavaFX" readOnly\="false" value\="/Applications/javafx-sdk-23.0.1/lib"/>\n</valueVariables>\n

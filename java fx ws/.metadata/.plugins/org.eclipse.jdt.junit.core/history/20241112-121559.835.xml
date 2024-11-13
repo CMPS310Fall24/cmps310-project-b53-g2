@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TransferTestCase1" project="GUIAapp" tests="6" started="6" failures="0" errors="0" ignored="0">
+  <testsuite name="junitTest.TransferTestCase1" time="0.016">
+    <testcase name="testGetCurrentOwnerName" classname="junitTest.TransferTestCase1" time="0.015"/>
+    <testcase name="testGetQidNewOwner" classname="junitTest.TransferTestCase1" time="0.002"/>
+    <testcase name="testHasUnpaidBills" classname="junitTest.TransferTestCase1" time="0.0"/>
+    <testcase name="testGetVin" classname="junitTest.TransferTestCase1" time="0.0"/>
+    <testcase name="testTransferStringStringStringStringBoolean" classname="junitTest.TransferTestCase1" time="0.0"/>
+    <testcase name="testGetNewOwnerName" classname="junitTest.TransferTestCase1" time="0.0"/>
+  </testsuite>
+</testrun>

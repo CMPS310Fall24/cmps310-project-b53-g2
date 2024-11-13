@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="AccidentReportTestCase2" project="GUIAapp" tests="7" started="7" failures="0" errors="0" ignored="0">
+  <testsuite name="junitTest.AccidentReportTestCase2" time="0.009">
+    <testcase name="testGetVin1" classname="junitTest.AccidentReportTestCase2" time="0.008"/>
+    <testcase name="testGetVin2" classname="junitTest.AccidentReportTestCase2" time="0.001"/>
+    <testcase name="testGetAccidentLocation" classname="junitTest.AccidentReportTestCase2" time="0.0"/>
+    <testcase name="testGetDescription" classname="junitTest.AccidentReportTestCase2" time="0.0"/>
+    <testcase name="testGenerateAccidentReport" classname="junitTest.AccidentReportTestCase2" time="0.0"/>
+    <testcase name="testSendReportToInsurance" classname="junitTest.AccidentReportTestCase2" time="0.0"/>
+    <testcase name="testGetAccidentTime" classname="junitTest.AccidentReportTestCase2" time="0.0"/>
+  </testsuite>
+</testrun>

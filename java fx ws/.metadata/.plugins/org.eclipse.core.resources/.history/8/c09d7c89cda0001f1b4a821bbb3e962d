@@ -1,0 +1,49 @@
+package junitTest;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class AccidentReportTestCase1 {
+
+	@Test
+	public void testAccidentReportStringStringStringLocalDateTimeString() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetVin1() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetVin2() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetAccidentLocation() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetAccidentTime() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetDescription() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGenerateAccidentReport() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSendReportToInsurance() {
+		fail("Not yet implemented");
+	}
+
+}

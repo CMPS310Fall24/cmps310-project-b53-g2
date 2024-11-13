@@ -1,0 +1,93 @@
+package junitTest;
+
+import static org.junit.Assert.*;
+
+import java.time.LocalDateTime;
+
+import org.junit.Test;
+
+import model.AccidentReport;
+
+public class AccidentReportTestCase2 {
+
+    @Test
+    public void testAccidentReportStringStringStringLocalDateTimeString() {
+        // Initialize the accident report object with default values
+        AccidentReport report = new AccidentReport();
+        
+        // Default values
+        assertEquals(null, report.getVin1());
+        assertEquals(null, report.getVin2());
+        assertEquals(null, report.getAccidentLocation());
+        assertNotNull(report.getAccidentTime());  // This should not be null
+        assertEquals(null, report.getDescription());
+    }
+
+    @Test
+    public void testGetVin1() {
+        // Initialize the accident report object
+        AccidentReport report = new AccidentReport();
+
+        // Test the getter for vin1
+        assertEquals(null, report.getVin1());
+    }
+
+    @Test
+    public void testGetVin2() {
+        // Initialize the accident report object
+        AccidentReport report = new AccidentReport();
+
+        // Test the getter for vin2
+        assertEquals(null, report.getVin2());
+    }
+
+    @Test
+    public void testGetAccidentLocation() {
+        // Initialize the accident report object
+        AccidentReport report = new AccidentReport();
+
+        // Test the getter for accident location
+        assertEquals(null, report.getAccidentLocation());
+    }
+
+    @Test
+    public void testGetAccidentTime() {
+        // Initialize the accident report object
+        AccidentReport report = new AccidentReport();
+
+        // Test the getter for accident time (should not be null)
+        assertNotNull(report.getAccidentTime());
+    }
+
+    @Test
+    public void testGetDescription() {
+        // Initialize the accident report object
+        AccidentReport report = new AccidentReport();
+
+        // Test the getter for description
+        assertEquals(null, report.getDescription());
+    }
+
+    @Test
+    public void testGenerateAccidentReport() {
+        // Initialize the accident report object
+        AccidentReport report = new AccidentReport();
+
+        // Test the generateAccidentReport method
+        String generatedReport = report.generateAccidentReport();
+        assertNotNull(generatedReport);  // Ensure it generates a report
+    }
+
+    @Test
+    public void testSendReportToInsurance() {
+        // Initialize the accident report object
+        AccidentReport report = new AccidentReport();
+
+        // Test the sendReportToInsurance method
+        try {
+            report.sendReportToInsurance();
+        } catch (Exception e) {
+            fail("Exception should not be thrown: " + e.getMessage());
+        }
+    }
+}

@@ -1,0 +1,117 @@
+package Test;
+
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class AccidentReportUI extends JFrame {
+
+    private JPanel contentPane;
+    private JTextField vinField, timeField, locationField;
+    private JLabel statusLabel;
+
+    public static void main(String[] args) {
+        EventQueue.invokeLater(() -> {
+            try {
+                AccidentReportUI frame = new AccidentReportUI();
+                frame.setVisible(true);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    public AccidentReportUI() {
+        setTitle("Accident Report");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setBounds(100, 100, 500, 400);
+        contentPane = new JPanel();
+        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+        setContentPane(contentPane);
+        contentPane.setLayout(null);
+
+        // VIN input
+        JLabel vinLabel = new JLabel("Vehicle Identification Number (VIN):");
+        vinLabel.setBounds(30, 30, 200, 25);
+        contentPane.add(vinLabel);
+
+        vinField = new JTextField();
+        vinField.setBounds(250, 30, 200, 25);
+        contentPane.add(vinField);
+        vinField.setColumns(10);
+
+        // Time input
+        JLabel timeLabel = new JLabel("Accident Time:");
+        timeLabel.setBounds(30, 70, 200, 25);
+        contentPane.add(timeLabel);
+
+        timeField = new JTextField();
+        timeField.setBounds(250, 70, 200, 25);
+        contentPane.add(timeField);
+        timeField.setColumns(10);
+
+        // Location input
+        JLabel locationLabel = new JLabel("Accident Location:");
+        locationLabel.setBounds(30, 110, 200, 25);
+        contentPane.add(locationLabel);
+
+        locationField = new JTextField();
+        locationField.setBounds(250, 110, 200, 25);
+        contentPane.add(locationField);
+        locationField.setColumns(10);
+
+        // Status Label
+        statusLabel = new JLabel("");
+        statusLabel.setBounds(30, 200, 400, 25);
+        contentPane.add(statusLabel);
+
+        // Submit button
+        JButton submitButton = new JButton("Submit Accident Report");
+        submitButton.setBounds(150, 160, 200, 30);
+        contentPane.add(submitButton);
+
+        submitButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                submitAccidentReport();
+            }
+        });
+    }
+
+    // Method to simulate the accident reporting process
+    private void submitAccidentReport() {
+        String vin = vinField.getText();
+        String time = timeField.getText();
+        String location = locationField.getText();
+
+        if (vin.isEmpty() || time.isEmpty() || location.isEmpty()) {
+            statusLabel.setText("Please fill in all the fields.");
+        } else {
+            // Simulate accident reporting flow
+            boolean isVinValid = verifyVIN(vin);
+
+            if (!isVinValid) {
+                statusLabel.setText("Error: Invalid VIN.");
+            } else {
+                sendReportToInsurance(vin, time, location);
+                statusLabel.setText("Accident report submitted successfully!");
+            }
+        }
+    }
+
+    // Simulated method to verify the VIN
+    private boolean verifyVIN(String vin) {
+        // In a real system, you'd query a database or external service to verify VIN
+        return !vin.equals("000000");
+    }
+
+    // Simulated method to send report to insurance
+    private void sendReportToInsurance(String vin, String time, String location) {
+        // Simulate sending the accident report to the insurance company
+        System.out.println("Accident report sent to insurance company.");
+        System.out.println("VIN: " + vin);
+        System.out.println("Time: " + time);
+        System.out.println("Location: " + location);
+    }
+}
